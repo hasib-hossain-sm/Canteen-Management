@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1375.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteen.MainPageController">
+    <children>
+      <AnchorPane fx:id="about_us_pane" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0" style="-fx-background-color: #333333;" />
+      <AnchorPane fx:id="order_status_pane" layoutX="468.0" layoutY="190.0" prefHeight="321.0" prefWidth="730.0" style="-fx-background-color: #222222;">
+         <children>
+            <Label fx:id="label_order_status" alignment="CENTER" layoutX="91.0" layoutY="73.0" prefHeight="100.0" prefWidth="548.0" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="266.0" layoutY="178.0" onAction="#btn_ok_order_status_pressed" prefHeight="61.0" prefWidth="199.0" style="-fx-background-color: #111111;" styleClass="pink-btn" stylesheets="@stylesheet.css" text="OK">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_cart" layoutY="55.0" prefHeight="746.0" prefWidth="1376.0" style="-fx-background-color: #000000;">
+         <children>
+            <TreeTableView fx:id="table_cart" layoutX="11.0" layoutY="137.0" prefHeight="665.0" prefWidth="1376.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_cart" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_cart" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   U N I T" />
+                  <TreeTableColumn fx:id="column_quantity_table_cart" minWidth="0.0" prefWidth="370.0" text="O R D E R  Q U A N T I T Y" />
+                  <TreeTableColumn fx:id="column_avail_table_cart" minWidth="0.0" prefWidth="312.0" text="PRICE" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <JFXButton layoutX="1170.0" layoutY="684.0" onAction="#btn_confirm_table_cart" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #39ed93;" styleClass="pink-btn" stylesheets="@stylesheet.css" text="CONFIRM ORDER" />
+            <Label fx:id="label_total_cart" alignment="CENTER" layoutX="777.0" layoutY="684.0" prefHeight="42.0" prefWidth="288.0" style="-fx-background-color: #333333;" text="TOTAL :    0" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_lunch" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0">
+         <children>
+            <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../home/page/1.jpg" />
+               </image>
+            </ImageView>
+            <TreeTableView fx:id="table_lunch" layoutY="384.0" prefHeight="385.0" prefWidth="1183.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="192.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_lunch" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_lunch" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   U N I T" />
+                  <TreeTableColumn fx:id="column_avail_table_lunch" minWidth="0.0" prefWidth="370.0" text="A V A I L A B L E" />
+                  <TreeTableColumn fx:id="column_quantity_table_lunch" minWidth="0.0" prefWidth="312.0" text="O R D E R  Q U A N T I T Y" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <AnchorPane layoutX="1183.0" layoutY="355.0" prefHeight="385.0" prefWidth="193.0" style="-fx-background-color: #333333;">
+               <children>
+                  <JFXButton layoutX="55.0" layoutY="95.0" onAction="#btn_add_lunch_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="ADD" />
+                  <JFXButton layoutX="54.0" layoutY="164.0" onAction="#btn_remove_lunch_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="REMOVE" />
+                  <JFXButton layoutX="55.0" layoutY="235.0" onAction="#btn_cart_lunch_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="VIEW CART" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_beverage" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0">
+         <children>
+            <ImageView fitHeight="385.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../home/page/3.jpg" />
+               </image>
+            </ImageView>
+            <TreeTableView fx:id="table_beverage" layoutY="384.0" prefHeight="385.0" prefWidth="1183.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_beverage" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_beverage" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   U N I T" />
+                  <TreeTableColumn fx:id="column_avail_table_beverage" minWidth="0.0" prefWidth="370.0" text="A V A I L A B L E" />
+                  <TreeTableColumn fx:id="column_quantity_table_beverage" minWidth="0.0" prefWidth="312.0" text="O R D E R  Q U A N T I T Y" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <AnchorPane layoutX="1183.0" layoutY="355.0" prefHeight="385.0" prefWidth="193.0" style="-fx-background-color: #333333;">
+               <children>
+                  <JFXButton layoutX="55.0" layoutY="95.0" onAction="#btn_add_beverage_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="ADD" />
+                  <JFXButton layoutX="54.0" layoutY="164.0" onAction="#btn_remove_beverage_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="REMOVE" />
+                  <JFXButton layoutX="55.0" layoutY="235.0" onAction="#btn_cart_beverage_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="VIEW CART" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_dessert" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0">
+         <children>
+            <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../home/page/5.jpg" />
+               </image>
+            </ImageView>
+            <TreeTableView fx:id="table_dessert" layoutY="384.0" prefHeight="385.0" prefWidth="1183.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_dessert" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_dessert" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   U N I T" />
+                  <TreeTableColumn fx:id="column_avail_table_dessert" minWidth="0.0" prefWidth="370.0" text="A V A I L A B L E" />
+                  <TreeTableColumn fx:id="column_quantity_table_dessert" minWidth="0.0" prefWidth="312.0" text="O R D E R  Q U A N T I T Y" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <AnchorPane layoutX="1183.0" layoutY="355.0" prefHeight="385.0" prefWidth="193.0" style="-fx-background-color: #333333;">
+               <children>
+                  <JFXButton layoutX="55.0" layoutY="95.0" onAction="#btn_add_dessert_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="ADD" />
+                  <JFXButton layoutX="54.0" layoutY="164.0" onAction="#btn_remove_dessert_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="REMOVE" />
+                  <JFXButton layoutX="55.0" layoutY="235.0" onAction="#btn_cart_dessert_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="VIEW CART" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_breakfast" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0">
+         <children>
+            <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../home/page/4.jpg" />
+               </image>
+            </ImageView>
+            <TreeTableView fx:id="table_breakfast" layoutY="384.0" prefHeight="385.0" prefWidth="1183.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_breakfast" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_breakfast" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   U N I T" />
+                  <TreeTableColumn fx:id="column_avail_table_breakfast" minWidth="0.0" prefWidth="370.0" text="A V A I L A B L E" />
+                  <TreeTableColumn fx:id="column_quantity_table_breakfast" minWidth="0.0" prefWidth="312.0" text="O R D E R  Q U A N T I T Y" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <AnchorPane layoutX="1183.0" layoutY="355.0" prefHeight="385.0" prefWidth="193.0" style="-fx-background-color: #333333;">
+               <children>
+                  <JFXButton layoutX="55.0" layoutY="95.0" onAction="#btn_add_breakfast_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="ADD" />
+                  <JFXButton layoutX="54.0" layoutY="164.0" onAction="#btn_remove_breakfast_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="REMOVE" />
+                  <JFXButton layoutX="55.0" layoutY="235.0" onAction="#btn_cart_breakfast_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="VIEW CART" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchor_pane_snacks" layoutY="60.0" prefHeight="740.0" prefWidth="1375.0">
+         <children>
+            <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../home/page/2.jpg" />
+               </image>
+            </ImageView>
+            <TreeTableView fx:id="table_snacks" layoutY="384.0" prefHeight="385.0" prefWidth="1183.0" style="-fx-background-color: #333333;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <columns>
+                  <TreeTableColumn id="food" fx:id="column_food_table_snacks" prefWidth="305.0" text="F O O D" />
+                  <TreeTableColumn fx:id="column_price_table_snacks" minWidth="0.0" prefWidth="273.0" text="P R I C E   P E R   P L A T E" />
+                  <TreeTableColumn fx:id="column_avail_table_snacks" minWidth="0.0" prefWidth="370.0" text="A V A I L A B L E" />
+                  <TreeTableColumn fx:id="column_quantity_table_snacks" minWidth="0.0" prefWidth="312.0" text="O R D E R  Q U A N T I T Y" />
+               </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+            <AnchorPane layoutX="1183.0" layoutY="355.0" prefHeight="385.0" prefWidth="193.0" style="-fx-background-color: #333333;">
+               <children>
+                  <JFXButton layoutX="55.0" layoutY="95.0" onAction="#btn_add_snacks_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="ADD" />
+                  <JFXButton layoutX="54.0" layoutY="164.0" onAction="#btn_remove_snacks_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="REMOVE" />
+                  <JFXButton layoutX="55.0" layoutY="235.0" onAction="#btn_cart_snacks_pressed" prefHeight="35.0" prefWidth="85.0" styleClass="pink-btn" stylesheets="@stylesheet.css" text="VIEW CART" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+        <AnchorPane fx:id="anchor_pane_main_page" layoutX="29.0" layoutY="35.0" prefHeight="445.0" prefWidth="517.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="61.0" prefWidth="1300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fx:id="drawerimage" fitHeight="42.0" fitWidth="61.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/134216-512.png" />
+                            </image>
+                        </ImageView>
+                  <ImageView fx:id="image_cart" fitHeight="61.0" fitWidth="61.0" layoutX="1314.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../home/page/216477-512.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="pane1" layoutY="61.0" prefHeight="355.0" prefWidth="1375.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                    <children>
+                        <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/1.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="pane2" layoutY="61.0" prefHeight="355.0" prefWidth="1375.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                    <children>
+                        <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/2.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="pane3" layoutY="61.0" prefHeight="355.0" prefWidth="1375.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                    <children>
+                        <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/3.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="pane4" layoutY="61.0" prefHeight="355.0" prefWidth="1375.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                    <children>
+                        <ImageView fitHeight="355.0" fitWidth="1375.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/4.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="mypane" layoutX="-1.0" layoutY="61.0" prefHeight="740.0" prefWidth="1335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <JFXButton fx:id="btn_lunch" layoutX="62.0" layoutY="470.0" onAction="#btn_lunch_pressed" prefHeight="150.0" prefWidth="200.0" />
+                        <ImageView fx:id="img_lunch" fitHeight="162.0" fitWidth="200.0" layoutX="62.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/images%20of%20catagory%20buttons/lunch.jpg" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_breakfast" layoutX="324.0" layoutY="470.0" onAction="#btn_breakfast_pressed" prefHeight="150.0" prefWidth="200.0" />
+                        <ImageView fx:id="img_breakfast" fitHeight="163.0" fitWidth="200.0" layoutX="324.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/images%20of%20catagory%20buttons/breakfast.jpg" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_snacks" layoutX="586.0" layoutY="470.0" onAction="#btn_snacks_pressed" prefHeight="150.0" prefWidth="200.0" />
+                        <ImageView fx:id="img_snacks" fitHeight="150.0" fitWidth="200.0" layoutX="586.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/images%20of%20catagory%20buttons/snacks.jpg" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_dessert" layoutX="848.0" layoutY="470.0" onAction="#btn_dessert_pressed" prefHeight="150.0" prefWidth="200.0" text="Button" />
+                        <ImageView fx:id="img_dessert" fitHeight="150.0" fitWidth="200.0" layoutX="848.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/images%20of%20catagory%20buttons/dessert.jpg" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_bevarage" layoutX="1110.0" layoutY="470.0" onAction="#btn_bevarage_pressed" prefHeight="150.0" prefWidth="200.0" text="Button" />
+                        <ImageView fx:id="img_bevarage" fitHeight="150.0" fitWidth="200.0" layoutX="1110.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/images%20of%20catagory%20buttons/beverage.jpg" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="1024.0" layoutX="262.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/welcome_massege.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="61.0" fitWidth="137.0" layoutX="1142.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/Images%20of%20catagory%20name/name_beverage.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="124.0" layoutX="892.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/Images%20of%20catagory%20name/name_dessert.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="123.0" layoutX="630.0" layoutY="639.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/Images%20of%20catagory%20name/name_snacks.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="42.0" fitWidth="147.0" layoutX="351.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/Images%20of%20catagory%20name/name_breakfast.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="42.0" fitWidth="137.0" layoutX="114.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../home/page/Images%20of%20catagory%20name/name_lunch.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+          <AnchorPane fx:id="opacityPane" opacity="0.18" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+          <AnchorPane fx:id="drawerPane" prefHeight="740.0" prefWidth="262.0" style="-fx-background-color: #222222;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="61.0">
+              <children>
+                  <GridPane layoutX="22.0" prefHeight="404.0" prefWidth="262.0" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <columnConstraints>
+                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                      <children>
+                          <JFXButton onAction="#drawer_btn_1_pressed" prefHeight="139.0" prefWidth="262.0" style="-fx-background-color: #333333;" text="HOME PAGE" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font></JFXButton>
+                  <JFXButton onAction="#drawer_btn_order_status_pressed" prefHeight="139.0" prefWidth="262.0" style="-fx-background-color: #333333;" text="ORDER STATUS" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#drawer_btn_log_out_pressed" prefHeight="139.0" prefWidth="262.0" style="-fx-background-color: #333333;" text="LOG OUT" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#drawer_btn_exit_pressed" prefHeight="139.0" prefWidth="262.0" style="-fx-background-color: #333333;" text="EXIT" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="206.0" onAction="#drawer_btn_about_us_pressed" prefHeight="139.0" prefWidth="262.0" style="-fx-background-color: #333333;" text="ABOUT US" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                      </children>
+                  </GridPane>
+              </children>
+          </AnchorPane>
+    </children>
+</AnchorPane>

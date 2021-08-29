@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="VBox" alignment="CENTER_LEFT" prefHeight="480.0" prefWidth="480.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteen.SignUpController">
+   <children>
+      <Label text="Sign Up">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="45.0" prefWidth="200.0" styleClass="tf_box" stylesheets="@stylesheet.css">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+         <children>
+            <TextField fx:id="full_name_sign_up_textbox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="429.0" promptText="Full Name" styleClass="tf" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="44.0" prefWidth="429.0" styleClass="tf_box" stylesheets="@stylesheet.css">
+         <children>
+            <TextField fx:id="textbox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="429.0" promptText="Username" styleClass="tf" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="200.0" styleClass="tf_box" stylesheets="@stylesheet.css">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+         <children>
+            <TextField fx:id="textbox2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="449.0" promptText="Password" styleClass="tf">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="249.0" prefHeight="45.0" prefWidth="220.0" stylesheets="@stylesheet.css">
+         <children>
+            <JFXButton fx:id="signupid" alignment="CENTER" onAction="#signUpPressed" prefHeight="39.0" prefWidth="120.0" ripplerFill="WHITE" styleClass="pink-btn" text="Sign Up" />
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
